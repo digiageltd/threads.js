@@ -18,8 +18,10 @@ class PostManager extends RESTManager {
 	) {
 		const requestBody = {
 			publish_mode: "text_post",
-			text_post_app_info:
-				'{"reply_control":0}' + options.data !== null ? options.data : "",
+			text_post_app_info:{
+				reply_control: 0,
+				link_attachment_url: options.data && options.data.link ? options.data.link : undefined,
+			},
 			timezone_offset: "-25200",
 			source_type: "4",
 			_uid: String(user),

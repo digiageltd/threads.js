@@ -182,6 +182,13 @@ The method is used to create a thread. Pass the text of the thread as the first 
 ```js
 await client.posts.create(1, { contents: "Hello World!" })
 ```
+
+
+You can attach a link if you want Threads to show preview of it using:
+```js
+await client.posts.create(1, { contents: "Hello World!", data: {link: "https://your-link.com"} })
+```
+
 ### client.posts.reply
 The method is used to create reply to a thread. Pass the text of the reply as the first parameter, the user id (supported as string and number) as the second, and post id as the third
 ```js
